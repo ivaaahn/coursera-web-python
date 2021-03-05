@@ -2,7 +2,7 @@ from requests import get
 import requests as req
 from operator import itemgetter
 
-from settings import API_VERSION, ACCESS_TOKEN
+from .settings import API_VERSION, ACCESS_TOKEN
 
 
 CURR_YEAR = 2021
