@@ -8,23 +8,18 @@ def parse(path_to_file: str) -> list:
         body = soup.find('div', id='bodyContent')
 
         imgs = list(body.find_all('img'))
-        img_widths = [int(img.get('width')) for img in imgs if img.get('width') is not None]
+        img_widths = [int(img.get('width'))
+                      for img in imgs if img.get('width') is not None]
         ans_imgs = sum(1 for width in img_widths if width >= 200)
 
-        hdrs = body.find_all(['h'+str(i) for i in range(1,7)])                                                                                                                            
-        ans_headers = sum(1 for hdr in hdrs if hdr.text[0] in 'ETC') 
+        hdrs = body.find_all(['h'+str(i) for i in range(1, 7)])
+        ans_headers = sum(1 for hdr in hdrs if hdr.text[0] in 'ETC')
 
-
-        
         ans_linkslen = ans_lists = None
 
-
     return [ans_imgs, ans_headers, ans_linkslen, ans_lists]
-    
 
 
-
-    
 # data = parse("wiki/Agnostic")
 
 
