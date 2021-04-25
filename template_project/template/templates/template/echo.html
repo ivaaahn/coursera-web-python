@@ -1,0 +1,15 @@
+{% extends 'template/base.html' %}
+
+{% block body %}
+
+<h1> I got some data for you </h1>
+
+{% for key, value in data.items %}
+
+    <p>{{key}} : {{value}}</p>
+
+{% endfor %}
+
+X-Print-Statement = {{ x }}
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'templatetags/base.html' %}
+
+{% load extras %}
+
+
+{% block body %}
+
+    <p> {{ data|inc:"10" }}</p>
+    
+    <p> {% division data "2" %}</p>
+
+    <p> {% division data 2 to_int=True %}</p>
+
+{% endblock  %}
